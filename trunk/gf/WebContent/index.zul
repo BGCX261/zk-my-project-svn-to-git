@@ -1,0 +1,35 @@
+<?page title="Gestore File"?>
+<window title="Gestore File" border="normal" width="auto" id="win" apply="org.zkoss.bind.BindComposer" viewModel="@id('vmf') @init('com.am.gestorefile.controller.IndexController')">
+
+<hbox>
+	<label value="Tipo File" />
+	<listbox rows="1" mold="select" model="@load(vmf.listaEstensioni)">
+		<template name="model" var="estensione">
+			<listitem label="@load(estensione)" />
+		</template>
+	</listbox>
+</hbox>
+
+
+<separator bar="true" />
+
+<listbox id="files" model="@load(vmf.listaFileGS)" mold="paging" pageSize="15" style="margin-top:10px" width="100%" pagingPosition="both" vflex="1" selectedItem="@bind(vmf.curSelctedFileGS)" >
+	<listhead menupopup="auto">
+		<listheader label="ID" width="5%" />
+		<listheader label="Nome" />
+		<listheader label="Tipo File" width="5%" sort="auto"/>
+		<listheader label="Dimensione" width="8%" />
+		<listheader label="Dettaglio" width="8%" />
+	</listhead>
+	<template name="model" var="f">
+		<listitem >
+			<listcell label="@load(f.idFile)"/>
+			<listcell label="@load(f.name)" />
+			<listcell label="@load(f.extension)" />
+			<listcell label="@load(f.size)" />
+			<listcell><button onClick="@command('dettaglioFileGSBtn')">Open</button></listcell>
+		</listitem>
+	</template>
+</listbox>
+
+</window>

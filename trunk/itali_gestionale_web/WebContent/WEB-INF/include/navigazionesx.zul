@@ -1,0 +1,39 @@
+<?component name="MenuItem" class="com.italigestionaleweb.composite.MenuItem" ?>
+
+<zk xmlns:ca="client/attribute">
+	<div>
+		<image src="images/logo.png" height="90px" />
+		
+		<vlayout 
+			spacing="0"
+			children="@load(vm.menuGroups)">
+			
+			<template name="children" var="menuGroup">
+				<listbox 
+					ca:data-scrollable="false"
+					width="250px"
+					model="${menuGroup.menuItems}"
+					onSelect='@command("showMessage", pos="end_center")'>
+					
+					<attribute name="onSelect">
+						<![CDATA[
+							includeContentArea.setSrc("/WEB-INF/content/"+self.getSelectedItem().getTitle().toLowerCase()+".zul");
+						]]>         
+					</attribute>
+					
+					<listhead sclass="menu-category">
+						<listheader label="${menuGroup.groupName}" />
+					</listhead>
+					<template name="model">
+						<MenuItem
+							picture="${each.picture}"
+							title="${each.title}"
+							/>
+					</template>
+				</listbox>
+			</template>
+			<!--  -->
+		</vlayout>
+		
+	</div>
+</zk>

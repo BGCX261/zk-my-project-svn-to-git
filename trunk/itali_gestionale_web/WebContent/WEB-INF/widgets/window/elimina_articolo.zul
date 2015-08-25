@@ -1,0 +1,8 @@
+<?page title="" contentType="text/html;charset=UTF-8"?>
+<zk>
+<window title="Elima Articolo" border="normal" mode="modal" closable="true">
+	<![CDATA[
+    	Messagebox.show("Question is pressed. Are you sure?", "Question", Messagebox.OK | Messagebox.CANCEL, Messagebox.QUESTION);
+	]]>
+</window>
+</zk>

@@ -1,0 +1,139 @@
+<window mode="modal" border="normal" title="Nuovo Cliente" width="80%" closable="true">
+<tabbox>
+	<tabs>
+		<tab label="Anagrafica"/>
+		<tab label="Destinazione Merce"/>
+		<tab label="Dati Bancari"/>
+		<tab label="Dati Aggiuntivi"/>
+	</tabs>
+	<tabpanels>
+		<tabpanel>
+			<groupbox closable="false">
+				<caption label="Anagrafica" style="font-weight: bold;"  />
+				<grid>
+					<columns>
+						<column label="" width="11%" />
+						<column label="" />
+					</columns>
+					<rows>
+						<row>
+							<label value="Codice cliente"/>
+							<textbox />
+						</row>
+						<row>
+							<label value="Ragione sociale"/>
+							<textbox cols="50" />
+						</row>
+						<row>
+							<label value="Tipo ditta"/>
+							<listbox mold="select">
+								<listitem label="Privato" />
+								<listitem label="Ditta individuale" />
+								<listitem label="Società" />
+								<listitem label="Estero" />
+							</listbox>
+						</row>
+						<row>
+							<label value="Cognome"/>
+							<hlayout spacing="20px">
+								<textbox cols="30" />
+								<label value="Nome" />
+								<textbox cols="30" />
+							</hlayout>
+						</row>
+						<row>
+							<label value="Indirizzo"/>
+							<hlayout spacing="20px">
+								<textbox cols="50" />
+								<label value="Civ." />
+								<textbox cols="5" />
+							</hlayout>
+						</row>
+						<row>
+							<label value="Stato"/>
+							<listbox mold="select">
+								<listitem label="Italia" />
+								<listitem label="Germania" />
+							</listbox>
+						</row>
+						<row>
+							<label value="Provincia"/>
+							<hlayout spacing="20px">
+								<textbox />
+								<label value="Città"/>
+								<textbox />
+								<label value="CAP"/>
+								<textbox maxlength="6" cols="8"/>
+							</hlayout>
+						</row>
+						<!-- <row>
+							<label value=""/>
+							<textbox />
+						</row> -->
+					</rows>
+				</grid>
+			</groupbox>
+			<groupbox closable="false">
+				<caption label="Recapiti" style="font-weight: bold;" />
+					<grid>
+						<columns>
+							<column label="" width="10%" />
+							<column label="" />
+						</columns>
+						<rows>
+							<row>
+								<label value="Telefono"/>
+								<hlayout spacing="20px">
+									<textbox />
+									<label value="Fax"/>
+									<textbox />
+									<label value="Cellulare 1"/>
+									<textbox />
+								</hlayout>
+							</row>
+							<row>
+								<label value="Partita IVA"/>
+								<textbox cols="50"/>
+							</row>
+							<row>
+								<label value="Email"/>
+								<hlayout>
+									<textbox cols="30"/>
+									<label value="Sito web"/>
+									<textbox />
+								</hlayout>
+								<textbox />
+							</row>
+						</rows>
+					</grid>
+				</groupbox>
+		</tabpanel>
+		<tabpanel>
+		
+		</tabpanel>
+		<tabpanel>
+		
+		</tabpanel>
+		<tabpanel>
+			<groupbox closable="false">
+				<caption label="Dati Aggiuntivi" style="font-weight: bold;"  />
+				<grid>
+					<columns>
+						<column label="" width="10%"></column>
+						<column></column>
+					</columns>
+					<rows>
+						<row>
+							<label value="Note" />
+							<textbox cols="80" rows="10" />
+						</row>
+					</rows>
+				</grid>
+			</groupbox>
+		</tabpanel>
+	</tabpanels>
+</tabbox>	
+<toolbar>
+	<toolbarbutton label="Salva" onClick="@command('submit')" image="images/navigation/toolbar/fornitori-add16.png"/>
+</toolbar>
+</window>

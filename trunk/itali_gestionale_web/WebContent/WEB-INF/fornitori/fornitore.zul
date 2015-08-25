@@ -1,0 +1,153 @@
+<?page title="" contentType="text/html;charset=UTF-8"?>
+<zk>
+
+<window title="Nuovo Fornitore" border="normal" width="90%" closable="true" maximizable="true" 
+ apply="org.zkoss.bind.BindComposer" viewModel="@id('vm') @init('com.italigestionaleweb.viewmodel.FormFornitoreViewModel')"
+ form="@id('fx') @load(vm.fornitore) @save(vm.fornitore, before='submit')">
+
+	<tabbox width="100%">
+		<tabs id="tabs">
+			<tab label="Anagrafica" />
+			<tab label="Dati Bancari" />
+			<tab label="Dati Aggiuntivi" />
+		</tabs>
+		<tabpanels>
+			<tabpanel>
+			
+				<groupbox closable="false">
+					<caption label="Anagrafica" style="font-weight: bold;" />
+					<vlayout>
+						<hlayout>
+							<label value="Codice Fornitore"  />
+							<textbox value="@bind(fx.codice_fornitore)" />
+							<label value="Tipologia"  />
+							<listbox mold="select">
+								<listitem label="" />
+							</listbox>
+						</hlayout>
+						<hlayout>
+							<label value="Ragione Sociale" />
+							<textbox value="@bind(fx.ragione_sociale)" />
+						</hlayout>
+						<hlayout>
+							<label value="Tipo ditta"  />
+							<listbox mold="select">
+								<listitem label="Privato" />
+								<listitem label="Ditta Individuale" />
+								<listitem label="Società" />
+								<listitem label="Estero" />
+							</listbox>
+						</hlayout>
+						<hlayout>
+							<label value="Cognome" />
+							<textbox value="@bind(fx.cognome)" />
+							<label value="Nome"  />
+							<textbox value="@bind(fx.nome)" />
+						</hlayout>
+						<hlayout>
+							<label value="Indirizzo" />
+							<textbox value="@bind(fx.indirizzo)" />
+							<label value="Civico" />
+							<textbox value="@bind(fx.civico)" />
+						</hlayout>
+						<hlayout>
+							<label value="Stato" />
+							<listbox mold="select">
+								<listitem label="Italia" />
+								<listitem label="Germania" />
+							</listbox>
+							<label value="Provincia" />
+							<textbox value="@bind(fx.provincia)" />
+						</hlayout>
+						<hlayout>
+							<label value="Città" />
+							<textbox value="@bind(fx.citta)" />
+							<label value="CAP" />
+							<textbox value="@bind(fx.cap)" />
+						</hlayout>
+					</vlayout>
+				</groupbox>
+				
+				<groupbox closable="false">
+					<caption label="Recapiti" style="font-weight: bold;" />
+					<vlayout>
+						<hlayout>
+							<label value="Telefono" />
+							<textbox />
+							<label value="Fax" />
+							<textbox />
+						</hlayout>
+						<hlayout>
+							<label value="Cellulare 1" />
+							<textbox />
+							<label value="Cellulare 2" />
+							<textbox />
+						</hlayout>
+						<hlayout>
+							<label value="Partita IVA" />
+							<textbox />
+							<label value="Codice Fiscale" />
+							<textbox />
+						</hlayout>
+						<hlayout>
+							<label value="Email" />
+							<textbox />
+						</hlayout>
+						<hlayout>
+							<label value="Sito Web" />
+							<textbox />
+						</hlayout>
+					</vlayout>
+				</groupbox>
+			
+			</tabpanel>
+			<tabpanel>
+				<groupbox closable="false">
+					<caption label="Banca" style="font-weight: bold;" />
+					<vlayout>
+						<hlayout>
+							<label value="Banca" />
+							<textbox />
+							<label value="Agenzia" />
+							<textbox />
+						</hlayout>
+						<hlayout>
+							<label value="IBAN" />
+							<textbox />
+							<label value="SWIFT" />
+							<textbox />
+						</hlayout>
+						<hlayout>
+							<label value="Conto" />
+							<textbox />
+							<label value="BBAN" />
+							<textbox />
+						</hlayout>
+						<hlayout>
+							<label value="CIN" />
+							<textbox />
+							<label value="ABI" />
+							<textbox />
+							<label value="CAB" />
+							<textbox />
+						</hlayout>
+					</vlayout>
+				</groupbox>
+			</tabpanel>
+			<tabpanel>
+				<groupbox closable="false">
+					<caption label="Dati Aggiuntivi" style="font-weight: bold;" />
+					<vlayout>
+						<label value="Note" />
+						<textbox rows="10" />
+					</vlayout>
+				</groupbox>
+			</tabpanel>
+		</tabpanels>
+	</tabbox>
+	<toolbar >
+		<toolbarbutton label="Salva" onClick="@command('submit')" />
+		<toolbarbutton label="Annulla" />
+	</toolbar>
+</window>
+</zk>

@@ -1,0 +1,38 @@
+<vlayout sclass="post">
+	
+	<hlayout>
+			
+		<image sclass="post-avatar" src="images/navigation/menu/clienti.png" />	
+			
+		<vlayout spacing="0">
+			<label sclass="post-author"  value="CLIENTI" />
+			<label sclass="post-time" value="Ultimo Aggiornamento:" />
+		</vlayout>
+		
+	</hlayout>
+	
+	<toolbar apply="com.italigestionaleweb.controller.ModalDialogController">
+		<toolbarbutton label="Nuovo" image="images/navigation/toolbar/cliente-add16.png" id="nuovoClienteBtn" />
+		<toolbarbutton label="Elimina" image="images/navigation/toolbar/cliente-delete16.png"/>
+		<toolbarbutton label="Ricerca" image="images/navigation/toolbar/ricerca16.png" />
+		<toolbarbutton label="Stampa" image="images/navigation/toolbar/stampa-green16.png" id="stampaFornitoriBtn" />
+		<toolbarbutton label="Importa" image="images/navigation/toolbar/importa16.png" id="importaFornitoriBtn" />
+		<toolbarbutton label="Esporta" image="images/navigation/toolbar/esporta16.png" id="esportaFornitoriBtn"/>
+	</toolbar>
+	
+	<listbox>
+		<listhead>
+			<listheader label="Codice" />
+			<listheader label="Ragione Sociale" />
+			<listheader label="Indirizzo" />
+			<listheader label="Cap" />
+			<listheader label="Città" />
+			<listheader label="Provincia" />
+			<listheader label="Telefono" />
+			<listheader label="Cellulare" />
+			<listheader label="Email" />
+			<listheader label="Sito" />
+		</listhead>
+	</listbox>
+
+</vlayout>

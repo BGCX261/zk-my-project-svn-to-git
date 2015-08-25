@@ -1,0 +1,17 @@
+<vlayout sclass="post">
+	
+	<hlayout>
+			
+		<image sclass="post-avatar" src="images/navigation/menu/promemoria.png" />	
+			
+		<vlayout spacing="0">
+			<label sclass="post-author"  value="PROMEMORIA" />
+			<label sclass="post-time" value="Ultimo Aggiornamento:" />
+		</vlayout>
+		
+	</hlayout>
+	
+	<div sclass="like-area touchable" >
+	</div>
+
+</vlayout>

@@ -1,0 +1,158 @@
+<?page title="new page title" contentType="text/html;charset=UTF-8"?>
+<zk>
+
+<vlayout spacing="15px">
+	
+	<vbox spacing="10px">
+		
+		<hbox spacing="15px">
+			<label value="Ragione Sociale" />
+			<textbox />
+		</hbox>
+		
+		<hbox spacing="15px">
+			<label value="Codice Fiscale" />
+			<textbox />
+			<label value="Matricola N°" />
+			<textbox />
+		</hbox>
+		
+	</vbox>
+
+	<!-- INIZIO Sede Sociale -->
+	<vbox spacing="15px">
+		<groupbox>
+			<caption label="Sede Sociale" />
+			<vbox spacing="10px">
+			
+				<hbox spacing="15px">
+					<label value="Via" />
+					<textbox />
+					<label value="N°" />
+					<intbox />
+					<label value="Località" />
+					<textbox />
+				</hbox>
+			
+				<hbox spacing="15px" >
+					<label value="Cap" />
+					<textbox />
+					<label value="Comune" />
+					<textbox />
+					<label value="Prov." />
+					<textbox />
+				</hbox>
+				
+				<hbox spacing="15px" >
+					<label value="Tel" />
+					<textbox />
+					<label value="Fax" />
+					<textbox />
+					<label value="Cell." />
+					<textbox />
+				</hbox>
+				
+				<hbox spacing="15px" >
+					<label value="Email" />
+					<textbox />
+					<label value="Sito" />
+					<textbox />
+				</hbox>
+				
+			</vbox>	
+		</groupbox>
+	</vbox>
+	<!-- FINE Sede Sociale -->
+	
+	<!-- INIZIO Altro Recapito -->
+	<vbox spacing="15px">
+		<groupbox>
+			<caption label="Altro Recapito" />
+			<vbox spacing="10px">
+			
+				<hbox spacing="15px">
+					<label value="Via" />
+					<textbox />
+					<label value="N°" />
+					<intbox />
+					<label value="Località" />
+					<textbox />
+				</hbox>
+			
+				<hbox spacing="15px" >
+					<label value="Cap" />
+					<textbox />
+					<label value="Comune" />
+					<textbox />
+					<label value="Prov." />
+					<textbox />
+				</hbox>
+				
+				<hbox spacing="15px" >
+					<label value="Tel" />
+					<textbox />
+					<label value="Fax" />
+					<textbox />
+					<label value="Cell." />
+					<textbox />
+				</hbox>
+				
+			</vbox>	
+		</groupbox>
+	</vbox>
+	<!-- FINE Altro Recapito -->
+	
+	<!-- INIZIO Referente Società -->
+	<vbox spacing="15px">
+		<groupbox>
+			<caption label="Referente Società" />
+			<vbox spacing="10px">
+			
+				<hbox spacing="15px">
+					<label value="Sig" />
+					<textbox />
+					<label value="Mansione" />
+					<textbox />
+				</hbox>
+			
+				<hbox spacing="15px" >
+					<label value="Via" />
+					<textbox />
+					<label value="N°" />
+					<intbox />
+					<label value="Località" />
+					<textbox />
+				</hbox>
+				
+				<hbox spacing="15px" >
+					<label value="Cap" />
+					<textbox />
+					<label value="Comune" />
+					<textbox />
+					<label value="Prov." />
+					<textbox />
+				</hbox>
+				
+				<hbox spacing="15px" >
+					<label value="Tel" />
+					<textbox />
+					<label value="Fax" />
+					<textbox />
+					<label value="Cell." />
+					<textbox />
+				</hbox>
+				
+				<hbox spacing="15px" >
+					<label value="Email" />
+					<textbox />
+				</hbox>
+			</vbox>	
+		</groupbox>
+	</vbox>
+	<!-- FINE Referente Società -->
+	
+	<button label="Salva" />
+	
+</vlayout>
+
+</zk>

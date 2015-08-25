@@ -1,0 +1,5 @@
+<vlayout children="@load(vm.postModel)">
+	<template name="children" var="post">
+		<include src="/WEB-INF/include/post.zul" /> 
+	</template>
+</vlayout>

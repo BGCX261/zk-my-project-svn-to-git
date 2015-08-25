@@ -1,0 +1,47 @@
+<?page title="Eureka Scheda Giocatore" contentType="text/html;charset=UTF-8"?>
+<zk>
+<window title="Eureka Scheda Giocatore" border="normal">
+	<vlayout>
+		<hbox>
+			<grid>
+				<rows>
+					<row>Codice Cartellino</row>
+					<row>Cognome</row>
+					<row>Nome</row>
+					<row>Data di Nascita</row>
+					<row>Luogo di Nasciata</row>
+					<row>Nazionalità</row>
+				</rows>
+			</grid>
+			<image id="defaultAvatar" src="/image/default-avatar.png" width="200px" height="200px"/>
+		</hbox>
+			
+		<tabbox id="tb">
+			<tabs id="tabs">
+				<tab>Stato di Famiglia</tab>
+				<tab>Scheda Medica</tab>
+				<tab>Carriera</tab>
+			</tabs>
+			<tabpanels>
+				<tabpanel>
+					<grid>
+						<columns>
+							<column>Parentela</column>
+							<column>Cognome e Nome</column>
+							<column>Data di Nascita</column>
+							<column>Luogo di Nasciata</column>
+							<column>Nazionalità</column>
+						</columns>
+						<rows>
+							<row></row>
+							<row spans="5">ss</row>
+						</rows>
+					</grid>
+				</tabpanel>
+				<tabpanel>bbb</tabpanel>
+				<tabpanel>ccc</tabpanel>
+			</tabpanels>
+		</tabbox>
+	</vlayout>
+</window>
+</zk>

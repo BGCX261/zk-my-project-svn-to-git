@@ -1,0 +1,58 @@
+<vlayout sclass="post">	
+
+	<hlayout>
+			
+		<image sclass="post-avatar" src="images/navigation/menu/fornitori.png" />	
+			
+		<vlayout spacing="0">
+			<label sclass="post-author"  value="FORNITORI" />
+			<label sclass="post-time" value="Ultimo Aggiornamento:" />
+		</vlayout>
+		
+	</hlayout>
+
+	<window id="winfornitori" apply="org.zkoss.bind.BindComposer" viewModel="@id('vmf') @init('com.italigestionaleweb.controller.FornitoriController')">
+	
+		<toolbar>
+			<toolbarbutton label="Nuovo" image="images/navigation/toolbar/fornitori-add16.png" id="nuovoFornitoreBtn" onClick="@command('nuovoFornitoreBtn')" />
+			<toolbarbutton label="Dettaglio" image="images/navigation/toolbar/fornitori-dettaglio16.png" id="dettaglioFornitoreBtn" onClick="@command('dettaglioFornitoreBtn')" />
+			<toolbarbutton label="Elimina" image="images/navigation/toolbar/fornitori-delete16.png"/>
+			<toolbarbutton label="Ricerca" image="images/navigation/toolbar/ricerca16.png" />
+			<toolbarbutton label="Stampa" image="images/navigation/toolbar/stampa-green16.png" id="stampaFornitoriBtn" />
+			<toolbarbutton label="Importa" image="images/navigation/toolbar/importa16.png" id="importaFornitoriBtn" />
+			<toolbarbutton label="Esporta" image="images/navigation/toolbar/esporta16.png" id="esportaFornitoriBtn"/>
+		</toolbar>
+	
+		<listbox id="forni" model="@load(vmf.fornitori)" mold="paging" pageSize="10" style="margin-top:10px" width="100%" selectedItem="@bind(vmf.curSelctedFornitore)">
+			<listhead>
+				<listheader label="Codice" width="7%" />
+				<listheader label="Ragione Sociale" />
+				<listheader label="Indirizzo" />
+				<listheader label="Cap" width="5%" />
+				<listheader label="Città" />
+				<listheader label="Provincia" width="10%" />
+				<listheader label="Telefono" />
+				<listheader label="Cellulare" />
+				<listheader label="Email" />
+			</listhead>
+			<template name="model" var="f1">
+				<listitem>
+					<listcell label="@load(f1.codice_fornitore)" />
+					<listcell label="@load(f1.ragione_sociale)" />
+					<listcell label="@load(f1.indirizzo)" />
+					<listcell label="@load(f1.cap)" />
+					<listcell label="@load(f1.citta)" />
+					<listcell label="@load(f1.provincia)" />
+					<listcell label="@load(f1.telefono)" />
+					<listcell label="@load(f1.cellulare_1)" />
+					<listcell label="@load(f1.email)" />
+				</listitem>
+			</template>
+		</listbox>
+	
+	</window>
+	
+	<div sclass="like-area touchable" >
+	</div>
+	
+</vlayout>

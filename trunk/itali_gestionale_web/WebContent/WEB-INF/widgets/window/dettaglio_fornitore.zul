@@ -1,0 +1,126 @@
+<window id="winDettaglioFornitore" mode="modal" border="normal" title="Dettaglio Fornitore" width="80%" closable="true"
+ apply="org.zkoss.bind.BindComposer" viewModel="@id('vmdf') @init('com.italigestionaleweb.controller.FornitoreController')" >
+<caption image="images/navigation/toolbar/fornitori-dettaglio16.png" label="@load(vmdf.fornitore.ragione_sociale)" /> 
+<tabbox>
+	<tabs>
+		<tab label="Anagrafica"/>
+		<tab label="Dati Bancari"/>
+		<tab label="Dati Aggiuntivi"/>
+	</tabs>
+	<tabpanels>
+		<tabpanel>
+			<groupbox closable="false">
+				<caption label="Anagrafica" style="font-weight: bold;"  />
+				<grid>
+					<columns>
+						<column label="" width="11%" />
+						<column label="" />
+					</columns>
+					<rows>
+						<row>
+							<label value="Codice fornitore"/>
+							<textbox value="@load(vmdf.fornitore.codice_fornitore)" readonly="true"/>
+						</row>
+						<row>
+							<label value="Ragione sociale"/>
+							<textbox value="@load(vmdf.fornitore.ragione_sociale)" cols="50" readonly="true"/>
+						</row>
+						<row>
+							<label value="Tipo ditta"/>
+							<textbox value="@load(vmdf.fornitore.tipo_ditta)" readonly="true" />
+						</row>
+						<row>
+							<label value="Cognome"/>
+							<hlayout spacing="20px">
+								<textbox cols="30" value="@load(vmdf.fornitore.cognome)" readonly="true"/>
+								<label value="Nome" />
+								<textbox cols="30" value="@load(vmdf.fornitore.nome)" readonly="true"/>
+							</hlayout>
+						</row>
+						<row>
+							<label value="Indirizzo"/>
+							<hlayout spacing="20px">
+								<textbox cols="50" value="@load(vmdf.fornitore.indirizzo)" readonly="true"/>
+								<label value="Civ." />
+								<textbox cols="5" value="@load(vmdf.fornitore.civico)" readonly="true"/>
+							</hlayout>
+						</row>
+						<row>
+							<label value="Stato"/>
+							<textbox value="@load(vmdf.fornitore.stato)" readonly="true" />
+						</row>
+						<row>
+							<label value="Provincia"/>
+							<hlayout spacing="20px">
+								<textbox value="@load(vmdf.fornitore.provincia)" readonly="true"/>
+								<label value="Città" />
+								<textbox value="@load(vmdf.fornitore.citta)" readonly="true"/>
+								<label value="CAP"/>
+								<textbox maxlength="6" cols="8" readonly="true"/>
+							</hlayout>
+						</row>
+						<!-- <row>
+							<label value=""/>
+							<textbox />
+						</row> -->
+					</rows>
+				</grid>
+			</groupbox>
+			<groupbox closable="false">
+				<caption label="Recapiti" style="font-weight: bold;" />
+				<grid>
+					<columns>
+						<column label="" width="10%" />
+						<column label="" />
+					</columns>
+					<rows>
+						<row>
+							<label value="Telefono"/>
+							<hlayout spacing="20px">
+								<textbox value="@load(vmdf.fornitore.telefono)" readonly="true"/>
+								<label value="Fax"/>
+								<textbox readonly="true"/>
+								<label value="Cellulare 1"/>
+								<textbox value="@load(vmdf.fornitore.cellulare_1)" readonly="true"/>
+							</hlayout>
+						</row>
+						<row>
+							<label value="Partita IVA"/>
+							<textbox cols="50" value="@load(vmdf.fornitore.partita_iva)" readonly="true"/>
+						</row>
+						<row>
+							<label value="Email"/>
+							<hlayout>
+								<textbox cols="30" value="@load(vmdf.fornitore.email)" readonly="true"/>
+								<label value="Sito web"/>
+								<textbox value="@load(vmdf.fornitore.sito_web)" readonly="true"/>
+							</hlayout>
+							<textbox />
+						</row>
+					</rows>
+				</grid>
+			</groupbox>
+		</tabpanel>
+		<tabpanel>
+			
+		</tabpanel>
+		<tabpanel>
+			<groupbox closable="false">
+				<caption label="Dati Aggiuntivi" style="font-weight: bold;"  />
+				<grid>
+					<columns>
+						<column label="" width="10%"></column>
+						<column></column>
+					</columns>
+					<rows>
+						<row>
+							<label value="Note" />
+							<textbox cols="80" rows="10" readonly="true"/>
+						</row>
+					</rows>
+				</grid>
+			</groupbox>
+		</tabpanel>
+	</tabpanels>
+</tabbox>	
+</window>

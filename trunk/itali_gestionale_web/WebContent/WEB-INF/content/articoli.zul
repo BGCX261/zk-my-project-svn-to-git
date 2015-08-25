@@ -1,0 +1,56 @@
+<vlayout sclass="post">
+	
+	<hlayout>
+			
+		<image sclass="post-avatar" src="images/navigation/menu/articoli.png" />	
+			
+		<vlayout spacing="0">
+			<label sclass="post-author"  value="ARTICOLI" />
+			<label sclass="post-time" value="Ultimo Aggiornamento:" />
+		</vlayout>
+		
+	</hlayout>
+	
+	<window id="winarticoli" apply="org.zkoss.bind.BindComposer" viewModel="@id('vma') @init('com.italigestionaleweb.controller.ArticoliController')">
+	
+		<toolbar>
+			<toolbarbutton label="Nuovo" image="images/navigation/toolbar/articolo-add16.png" id="nuovoArticoloBtn" onClick="@command('nuovoArticoloBtn')"/>
+			<toolbarbutton label="Dettaglio" image="images/navigation/toolbar/articolo-dettaglio16.png" id="dettaglioArticoloBtn" onClick="@command('dettaglioArticoloBtn')"/>
+			<toolbarbutton label="Elimina" image="images/navigation/toolbar/articolo-delete16.png" id="eliminaArticoloBtn" onClick="@command('eliminaArticoloBtn')"/>
+			<toolbarbutton label="Ricerca" image="images/navigation/toolbar/ricerca16.png" id="cercaArticoloBtn" onClick="@command('cercaArticoloBtn')" />
+			<toolbarbutton label="Stampa" image="images/navigation/toolbar/stampa-green16.png" id="stampaFornitoriBtn" onClick="@command('stampaArticoloBtn)'" />
+			<toolbarbutton label="Importa" image="images/navigation/toolbar/importa16.png" id="importaFornitoriBtn" />
+			<toolbarbutton label="Esporta" image="images/navigation/toolbar/esporta16.png" id="esportaFornitoriBtn"/>
+		</toolbar>
+		
+		<listbox id="arti" model="@load(vma.articoli)" mold="paging" pageSize="6" style="margin-top:10px" width="100%" selectedItem="@bind(vma.curSelctedArticolo)">
+			<listhead>
+				<listheader label="Codice Articolo" />
+				<listheader label="Nome" />
+				<listheader label="Giacenza" />
+				<listheader label="Giacenza Prenotati" />
+				<listheader label="Categoria" />
+				<listheader label="Sotto Categoria" />
+				<listheader label="Prezzo d'acquisto" />
+				<listheader label="Fornitore" />
+			</listhead>
+			<template name="model" var="a1">
+				<listitem>
+					<listcell label="@load(a1.codice_articolo)" />
+					<listcell label="@load(a1.nome)" />
+					<listcell label="@load(a1.giacenza)" />
+					<listcell label="@load(a1.prenotati)" />
+					<listcell label="@load(a1.categoria)" />
+					<listcell label="@load(a1.sotto_categoria)" />
+					<listcell label="@load(a1.prezzo_acquisto)" />
+					<listcell label="@load(a1.fornitore)" />
+				</listitem>
+			</template>
+		</listbox>
+	
+	</window>
+
+	<div sclass="like-area touchable" >
+	</div>
+
+</vlayout>

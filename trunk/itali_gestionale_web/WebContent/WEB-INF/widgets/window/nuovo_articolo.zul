@@ -1,0 +1,216 @@
+<window id="winNuovoArticolo" mode="modal" border="normal" title="Nuovo Articolo" width="80%" closable="true"
+ apply="org.zkoss.bind.BindComposer" viewModel="@id('vm') @init('com.italigestionaleweb.viewmodel.FormArticoloViewModel')"	>
+<caption image="images/navigation/toolbar/articolo-add16.png" />
+<tabbox>
+	<tabs>
+		<tab label="Dati Articolo"/>
+		<tab label="Dettagli Articoli"/>
+		<tab label="Foto Descrizione"/>
+		<tab label="Storico prezzo acquisto"/>
+	</tabs>
+	<tabpanels>
+		<tabpanel>
+			<groupbox closable="false">
+				<caption label="Dati articolo" style="font-weight: bold;"  />
+				<grid>
+					<columns>
+						<column label="" width="11%" />
+						<column label="" />
+					</columns>
+					<rows>
+						<row>
+							<label value="Codice articolo"/>
+							<hlayout spacing="20px">
+								<textbox cols="20" value="@bind(vm.articolo.codice_articolo)"/>
+								<label value="Codice articolo fornitore" />
+								<textbox cols="20" value="@bind(vm.articolo.codice_fornitore)"/>
+								<label value="Codice EAN-UPC" />
+								<textbox cols="20" value="@bind(vm.articolo.codice_ean_upc)"/>
+							</hlayout>
+						</row>
+						<row>
+							<label value="Nome articolo"/>
+							<textbox cols="80" value="@bind(vm.articolo.nome)"/>
+						</row>
+						<row>
+							<label value="Fornitore"/>
+							<listbox mold="select" selectedItem="@bind(vm.articolo.fornitore)" model="@load(vm.listFornitori)">
+								<template name="model" var="fornit">
+									<listitem label="@load(fornit)" value="@load(fornit)" />
+								</template>
+							</listbox>
+						</row>
+						<row>
+							<label value="Giacenza"/>
+							<hlayout spacing="20px">
+								<spinner cols="5" constraint="no negative" value="@bind(vm.articolo.giacenza)"/>
+								<label value="Prenotati" />
+								<spinner cols="5" constraint="no negative" value="@bind(vm.articolo.prenotati)"/>
+								<label value="In riordino" />
+								<spinner cols="5" constraint="no negative" value="@bind(vm.articolo.riordino)"/>
+								<label value="Scorta minima" />
+								<spinner cols="5" constraint="no negative" value="@bind(vm.articolo.scorta_minima)"/>
+								<label value="Unità di misura" />
+								<listbox mold="select" selectedItem="@bind(vm.articolo.unita_di_misura)">
+									<listitem label="Pz" value="Pz"/>
+									<listitem label="Kg" value="Kg"/>
+									<listitem label="Lt" value="Lt"/>
+								</listbox>
+							</hlayout>
+						</row>
+						<row>
+							<label value="Categoria"/>
+							<hlayout spacing="20px">
+								<listbox mold="select" selectedItem="@bind(vm.articolo.categoria)">
+									<listitem label="Pasta e riso" value="Pasta e riso"/>
+									<listitem label="Condimenti" value="Condimenti"/>
+									<listitem label="Caffè" value="Caffè"/>
+									<listitem label="Vini" value="Vini"/>
+									<listitem label="Liquori" value="Liquori"/>
+									<listitem label="Dolci" value="Dolci" />
+								</listbox>
+								<label value="Sotto categoria"/>
+								<listbox mold="select" selectedItem="@bind(vm.articolo.sotto_categoria)">
+									<listitem label="Pasta di semola lunga" value="Pasta di semola lunga"/>
+									<listitem label="Pasta di semola corta" value="Pasta di semola corta"/>
+									<listitem label="Pasta di semola piccola" value="Pasta di semola piccola"/>
+									<listitem label="Formati speciali e regionali" value="Formati speciali e regionali"/>
+									<listitem label="Pasta integrale" value="Pasta integrale"/>
+									<listitem label="Pasta di riso" value="Pasta di riso"/>
+								</listbox>
+							</hlayout>
+						</row>
+						<!-- <row>
+							<label value="Provincia"/>
+							<hlayout spacing="20px">
+								<textbox />
+								<label value="Città"/>
+								<textbox />
+								<label value="CAP"/>
+								<textbox maxlength="6" cols="8"/>
+							</hlayout>
+						</row> -->
+						<!-- <row>
+							<label value=""/>
+							<textbox />
+						</row> -->
+					</rows>
+				</grid>
+			</groupbox>
+			<groupbox closable="false">
+				<caption label="Prezzi e Ricarichi" style="font-weight: bold;" />
+					<grid>
+						<columns>
+							<column label="" width="20%" />
+							<column label="" />
+						</columns>
+						<rows>
+							<row>
+								<label value="Listino fornitore"/>
+								<hlayout spacing="20px">
+									<textbox cols="5" value="@bind(vm.articolo.listino_fornitore)"/>
+									<label value="Sconto fornitore"/>
+									<textbox cols="5" value="@bind(vm.articolo.sconto_fornitore)"/>
+									<label value="Prezzo d'acquisto"/>
+									<textbox cols="5" value="@bind(vm.articolo.prezzo_acquisto)"/>
+									<label value="Sconto medio"/>
+									<textbox cols="5" value="@bind(vm.articolo.sconto_medio)"/>
+								</hlayout>
+							</row>
+						</rows>
+					</grid>
+				</groupbox>
+		</tabpanel>
+		<tabpanel>
+			<groupbox closable="false">
+				<caption label="Dettagli articolo" style="font-weight: bold;"  />
+				<grid>
+					<columns>
+						<column label="" width="11%" />
+						<column label="" />
+					</columns>
+					<rows>
+						<row>
+							<label value="Descrizione"/>
+							<textbox cols="80" rows="3" value="@bind(vm.articolo.descrizione)"/>
+						</row>
+						<row>
+							<label value="Produttore"/>
+							<textbox value="@bind(vm.articolo.produttore)" />
+						</row>
+						<row>
+							<label value="Confezione"/>
+							<textbox value="@bind(vm.articolo.confezione)" />
+						</row>
+						<row>
+							<label value="Peso netto"/>
+							<hlayout spacing="20px">
+									<textbox cols="5" value="@bind(vm.articolo.peso)"/>
+									<listbox mold="select" selectedItem="@bind(vm.articolo.peso_unita)">
+										<listitem label="gr" value="gr"/>
+										<listitem label="kg" value="kg"/>
+										<listitem label="lt" value="lt" />
+									</listbox>
+								</hlayout>
+						</row>
+						<row>
+							<label value="Ingredienti"/>
+							<textbox value="@bind(vm.articolo.ingredienti)" cols="80"/>
+						</row>
+						<row>
+							<label value="Regione"/>
+							<textbox value="@bind(vm.articolo.regione)"/>
+						</row>
+						<row>
+							<label value="Fabbricazione"/>
+							<textbox value="@bind(vm.articolo.fabbricazione)"/>
+						</row>
+						<row>
+							<label value="Certificazioni"/>
+							<textbox value="@bind(vm.articolo.certificazioni)" cols="80"/>
+						</row>
+					</rows>
+				</grid>
+			</groupbox>
+		</tabpanel>
+		<tabpanel>
+			<groupbox closable="false">
+				<caption label="Foto articolo" style="font-weight: bold;"  />
+				
+				<vlayout>
+					<button id="btnUpload" mold="trendy" upload="true" label="Carica Immagine" onUpload="@command('upload')"  />
+					<image content="@bind(vm.myImage)" />
+				</vlayout>
+			</groupbox>	
+		</tabpanel>
+		<tabpanel>
+			<groupbox closable="false">
+				<caption label="Storico prezzo d'acquisto" style="font-weight: bold;"  />
+				<grid>
+					<columns>
+						<column label="Data"/>
+						<column label="Fattura"/>
+						<column label="Listino"/>
+						<column label="Sconto"/>
+						<column label="Prezzo"/>
+						<column label="Quantità"/>
+					</columns>
+					<rows>
+						<row>
+							<label value=""/>
+							<label value=""/>
+							<label value=""/>
+							<label value=""/>
+							<label value=""/>
+							<label value=""/>
+						</row>
+					</rows>
+				</grid>
+			</groupbox>
+		</tabpanel>
+	</tabpanels>
+</tabbox>	
+<toolbar>
+	<toolbarbutton label="Salva" onClick="@command('submit')" image="images/navigation/toolbar/fornitori-add16.png"/>
+</toolbar>
+</window>

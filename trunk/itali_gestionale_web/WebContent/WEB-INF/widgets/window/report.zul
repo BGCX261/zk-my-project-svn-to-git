@@ -1,0 +1,5 @@
+<window title="Report" mode="modal" border="normal" closable="true" width="80%">
+	<jasperreport id="report">
+	
+	</jasperreport>
+</window>

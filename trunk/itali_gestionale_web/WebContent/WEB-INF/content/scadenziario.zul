@@ -1,0 +1,16 @@
+<vlayout sclass="post">
+	
+	<hlayout>
+			
+		<image sclass="post-avatar" src="images/navigation/menu/scadenziario.png" />	
+			
+		<vlayout spacing="0">
+			<label sclass="post-author"  value="SCADENZIARIO" />
+			<label sclass="post-time" value="Ultimo Aggiornamento:" />
+		</vlayout>
+		
+	</hlayout>
+	
+	
+
+</vlayout>

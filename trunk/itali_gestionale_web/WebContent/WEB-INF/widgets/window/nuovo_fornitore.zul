@@ -1,0 +1,138 @@
+<window id="winNuovoFornitore" mode="modal" border="normal" title="Nuovo Fornitore" width="80%" closable="true"
+        apply="org.zkoss.bind.BindComposer" viewModel="@id('vm') @init('com.italigestionaleweb.viewmodel.FormFornitoreViewModel')"
+>
+<tabbox>
+	<tabs>
+		<tab label="Anagrafica"/>
+		<tab label="Dati Bancari"/>
+		<tab label="Dati Aggiuntivi"/>
+	</tabs>
+	<tabpanels>
+		<tabpanel>
+			<groupbox closable="false">
+				<caption label="Anagrafica" style="font-weight: bold;"  />
+				<grid>
+					<columns>
+						<column label="" width="11%" />
+						<column label="" />
+					</columns>
+					<rows>
+						<row>
+							<label value="Codice fornitore"/>
+							<textbox value="@bind(vm.fornitore.codice_fornitore)" />
+						</row>
+						<row>
+							<label value="Ragione sociale"/>
+							<textbox value="@bind(vm.fornitore.ragione_sociale)" cols="50" />
+						</row>
+						<row>
+							<label value="Tipo ditta"/>
+							<listbox mold="select" selectedItem="@bind(vm.fornitore.tipo_ditta)">
+								<listitem label="Privato" value="Privato" />
+								<listitem label="Ditta individuale" value="Ditta individuale" />
+								<listitem label="Società" value="Società"/>
+								<listitem label="Estero" value="Estero" />
+							</listbox>
+						</row>
+						<row>
+							<label value="Cognome"/>
+							<hlayout spacing="20px">
+								<textbox cols="30" value="@bind(vm.fornitore.cognome)" />
+								<label value="Nome" />
+								<textbox cols="30" value="@bind(vm.fornitore.nome)" />
+							</hlayout>
+						</row>
+						<row>
+							<label value="Indirizzo"/>
+							<hlayout spacing="20px">
+								<textbox cols="50" value="@bind(vm.fornitore.indirizzo)" />
+								<label value="Civ." />
+								<textbox cols="5" value="@bind(vm.fornitore.civico)" />
+							</hlayout>
+						</row>
+						<row>
+							<label value="Stato"/>
+							<listbox mold="select" selectedItem="@bind(vm.fornitore.stato)">
+								<listitem label="Italia" value="Italia" />
+								<listitem label="Germania" value="Germania" />
+							</listbox>
+						</row>
+						<row>
+							<label value="Provincia"/>
+							<hlayout spacing="20px">
+								<textbox value="@bind(vm.fornitore.provincia)"/>
+								<label value="Città" />
+								<textbox value="@bind(vm.fornitore.citta)"/>
+								<label value="CAP"/>
+								<textbox maxlength="6" cols="8"/>
+							</hlayout>
+						</row>
+						<!-- <row>
+							<label value=""/>
+							<textbox />
+						</row> -->
+					</rows>
+				</grid>
+			</groupbox>
+			<groupbox closable="false">
+				<caption label="Recapiti" style="font-weight: bold;" />
+					<grid>
+						<columns>
+							<column label="" width="10%" />
+							<column label="" />
+						</columns>
+						<rows>
+							<row>
+								<label value="Telefono"/>
+								<hlayout spacing="20px">
+									<textbox value="@bind(vm.fornitore.telefono)" />
+									<label value="Fax"/>
+									<textbox />
+									<label value="Cellulare 1"/>
+									<textbox value="@bind(vm.fornitore.cellulare_1)"/>
+								</hlayout>
+							</row>
+							<row>
+								<label value="Partita IVA"/>
+								<textbox cols="50" value="@bind(vm.fornitore.partita_iva)"/>
+							</row>
+							<row>
+								<label value="Email"/>
+								<hlayout>
+									<textbox cols="30" value="@bind(vm.fornitore.email)"/>
+									<label value="Sito web"/>
+									<textbox value="@bind(vm.fornitore.sito_web)"/>
+								</hlayout>
+								<textbox />
+							</row>
+						</rows>
+					</grid>
+				</groupbox>
+		</tabpanel>
+		<tabpanel>
+		
+		</tabpanel>
+		<tabpanel>
+			<groupbox closable="false">
+				<caption label="Dati Aggiuntivi" style="font-weight: bold;"  />
+				<grid>
+					<columns>
+						<column label="" width="10%"></column>
+						<column></column>
+					</columns>
+					<rows>
+						<row>
+							<label value="Note" />
+							<textbox cols="80" rows="10" />
+						</row>
+					</rows>
+				</grid>
+			</groupbox>
+		</tabpanel>
+	</tabpanels>
+</tabbox>	
+<toolbar>
+	<toolbarbutton label="Salva" onClick="@command('submit')" image="images/navigation/toolbar/fornitori-add16.png"/>
+	<toolbarbutton label="Annulla" onClick="@command('closeThis')" />
+</toolbar>
+</window>

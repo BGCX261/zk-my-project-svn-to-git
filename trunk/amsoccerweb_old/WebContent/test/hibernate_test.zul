@@ -1,0 +1,18 @@
+<?page title="" contentType="text/html;charset=UTF-8"?>
+<zk>
+<window title="" border="normal" id="hibernateAllTestId" width="200px" height="200px" apply="org.zkoss.bind.BindComposer" mode="modal" viewModel="@id('vm') @init('org.amsoccerweb.view.HibernateTestVM')">
+
+	<separator />
+	<listbox id="test" model="@load(vm.allTestsId)">
+		<listhead>
+			<listheader label="test id"/>
+		</listhead>
+		<template name="model" var="id">
+			<listitem>	
+				<listcell label="@load(id.idTest)" />
+			</listitem>
+		</template>
+	</listbox>
+
+</window>
+</zk>

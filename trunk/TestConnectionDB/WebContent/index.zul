@@ -1,0 +1,23 @@
+<?page title="Auto Generated index.zul"?>
+<window title="Test Connection DB " border="normal" apply="org.zkoss.bind.BindComposer" viewModel="@id('vm') @init('TestMySQLAccessController')">
+
+<label value="You are using: ${desktop.webApp.version}"/>
+
+<grid>
+	<columns>
+		<column>Host</column>
+		<column>Name</column>
+		<column>Username</column>
+		<column>Password</column>
+	</columns>
+	<rows>
+		<row>
+			<textbox id="host" hflex="1" value="@bind(vm.connection.host)" constraint="no empty" />
+			<textbox id="name" hflex="1" value="@bind(vm.connection.name)" constraint="no empty" />
+			<textbox id="username" hflex="1" value="@bind(vm.connection.username)" constraint="no empty" />
+			<textbox id="password" hflex="1" value="@bind(vm.connection.password)" constraint="no empty" />
+		</row>
+	</rows>
+</grid>
+<button label="TEST" onClick="@command('testConnection')" />
+</window>

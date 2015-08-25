@@ -1,0 +1,6 @@
+<zk>
+<window title="Dettaglio Immagine" border="normal" width="500px" height="500px" closable="true">
+	<image id="dettaglioImage" src="C:\Users\Ulixe\Downloads\001.jpg" />
+</window>
+</zk>
+

@@ -1,0 +1,45 @@
+<panel border="none" collapsible="true" sclass="transparent">
+  <caption iconSclass="z-icon-star orange" label="Allenatori"/>
+  <panelchildren>
+    <grid sclass="domain">
+      <columns>
+        <column label="Sig." iconSclass="z-icon-caret-right blue"/>
+        <column label="Area" iconSclass="z-icon-caret-right blue"/>
+        <column label="Squadra" iconSclass="z-icon-caret-right blue"/>
+        <column label="Gruppo" iconSclass="z-icon-caret-right blue"/>
+      </columns>
+      <rows>
+        <row>
+          <label value="internet.com"/>
+          <label value="$16.45"/>
+          <label value="onsale" sclass="label label-info arrowed-right arrowed-in"/>
+          <label value="A"/>
+        </row>
+        <row>
+          <label value="online.com"/>
+          <label value="$16.45"/>
+          <label value="approved" sclass="label label-success arrowed-in arrowed-in-right"/>
+          <label value="A"/>
+        </row>
+        <row>
+          <label value="newnet.com"/>
+          <label sclass="green" value="$15.00"/>
+          <label value="pending" sclass="label label-danger arrowed"/>
+          <label value="A"/>
+        </row>
+        <row>
+          <label value="web.com"/>
+          <div><label sclass="red" value="$24.99"/><label sclass="green" value="$19.95"/></div>
+          <label value="out of stock" sclass="label arrowed" style="text-decoration:line-through;"/>
+          <label value="A"/>
+        </row>
+        <row>
+          <label value="domain.com"/>
+          <label sclass="green" value="$12.00"/>
+          <label value="SOLD" sclass="label label-warning arrowed arrowed-right"/>
+          <label value="A"/>
+        </row>
+      </rows>
+    </grid>
+  </panelchildren>
+</panel>

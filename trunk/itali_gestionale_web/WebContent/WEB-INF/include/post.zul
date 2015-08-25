@@ -1,0 +1,12 @@
+<vlayout sclass="post">
+	
+	<label sclass="post-author" value="@load(post.author)" />
+	
+	<label sclass="post-time" value="@load(post.time)" />
+	
+	<html sclass="post-article" content="@load(post.content)" />
+	
+	<image src="images/bg1.jpg" /> 
+		
+
+</vlayout>

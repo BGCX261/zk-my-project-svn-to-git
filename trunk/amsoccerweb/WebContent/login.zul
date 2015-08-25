@@ -1,0 +1,24 @@
+<?page title="Eureka Login" contentType="text/html;charset=UTF-8"?>
+<zk>
+<window title="Eureka Login" border="normal" width="400px">
+	<grid>
+		<auxhead>
+			<auxheader label="Login" colspan="2"/>
+		</auxhead>
+		<columns/>
+		<rows>
+			<row>
+				Username:
+				<textbox id="Username" type="text" />
+			</row>
+			<row>
+				Password:
+				<textbox id="Password" type="password" />
+			</row>
+			<row spans="2" style="text-align: center">
+				<button id="login" label="Login" />
+			</row>
+		</rows>
+	</grid>	
+</window>
+</zk>

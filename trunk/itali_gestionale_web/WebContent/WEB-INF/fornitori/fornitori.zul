@@ -1,0 +1,30 @@
+	
+	<listbox model="${winfornitori$composer.fornitoriModel}" mold="paging" pageSize="10" style="margin-top:10px" width="100%" apply="com.italigestionaleweb.controller.ListboxFornitoreController">
+		<listhead>
+			<listheader label="Codice" />
+			<listheader label="Ragione Sociale" />
+			<listheader label="Indirizzo" />
+			<listheader label="Cap" />
+			<listheader label="Città" />
+			<listheader label="Provincia" />
+			<listheader label="Telefono" />
+			<listheader label="Cellulare" />
+			<listheader label="Email" />
+			<listheader label="Sito" />
+		</listhead>
+		<template name="model">
+			<listitem>
+				<listcell label="${each.codice_fornitore}" />
+				<listcell label="${each.ragione_sociale}" />
+				<listcell label="${each.indirizzo}" />
+				<listcell label="${each.cap}" />
+				<listcell label="${each.citta}" />
+				<listcell label="${each.provincia}" />
+				<listcell label="${each.telefono}" />
+				<listcell label="${each.cellulare_1}" />
+				<listcell label="${each.email}" />
+				<listcell label="${each.sito_web}" />
+			</listitem>
+		</template>
+	</listbox>
+

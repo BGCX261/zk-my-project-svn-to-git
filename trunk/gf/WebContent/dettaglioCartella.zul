@@ -1,0 +1,45 @@
+<?page title="" contentType="text/html;charset=UTF-8"?>
+<zk>
+<style>
+	z-window-header {font-weight:bold;}
+</style>
+<window title="@load(vm.dir)" border="normal" apply="org.zkoss.bind.BindComposer" viewModel="@id('vm') @init('com.am.gestorefile.viewmodel.data_filter.FilterViewModel')">
+	<grid model="@load(vm.fileGSModel)" mold="paging" pagingPosition="both"  vflex="true" pageSize="15">
+		<auxhead>
+			<auxheader />
+			<auxheader>
+				<textbox instant="true" value="@bind(vm.fileGSFilter.name)" onChange="@command('changeFilter')" />
+			</auxheader>
+			<auxheader>
+				<listbox mold="select" hflex="1" selectedItem="@bind(vm.fileGSFilter.extension)" onSelect="@command('changeFilterExtension')" >
+					<listitem></listitem>
+					<listitem label="doc" value="doc" />
+					<listitem label="jpg" value="jpg" />
+					<listitem label="pdf" value="pdf" />
+					<listitem label="directory" value="directory" />
+				</listbox>
+			</auxheader>
+			<auxheader />
+		</auxhead>
+		<columns>
+			<column width="5%">Id</column>
+			<column hflex="2" sort="auto(name)">Nome</column>
+			<column width="10%">Tipo</column>
+			<column width="8%">Dimensione</column>
+			<column width="8%"></column>
+		</columns>
+		<template name="model">
+			<row>
+				<label value="@load(each.idFile)" />
+				<label value="@load(each.name)" />
+				<label value="@load(each.extension)" />
+				<label value="@load(each.size)" />
+				<button onClick="@command('viewDetail', file=each)">Detail</button>
+			</row>
+		</template>
+		<foot>
+			<footer span="4" label="@load(vm.footer)" />
+		</foot>
+	</grid>
+</window>
+</zk>

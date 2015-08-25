@@ -1,0 +1,52 @@
+<vlayout sclass="post">
+	
+	<hlayout>
+			
+		<image sclass="post-avatar" src="images/navigation/menu/categorie.png" />	
+			
+		<vlayout spacing="0">
+			<label sclass="post-author"  value="CATEGORIE" />
+			<label sclass="post-time" value="Ultimo Aggiornamento:" />
+		</vlayout>
+		
+	</hlayout>
+	
+	<window border="none" apply="org.zkoss.bind.BindComposer" viewModel="@id('vm') @init('com.italigestionaleweb.viewmodel.TreeCategorieViewModel')">
+		<toolbar>
+			<textbox value="@bind(vm.categoria)" />
+			<toolbarbutton label="Nuova Categoria" image="images/navigation/toolbar/categorie-add16.png" onClick="@command('nuovaCategoriaBtn')" />
+			<toolbarbutton label="Nuova SottoCategoria" image="images/navigation/toolbar/categorie-add16.png" onClick="@command('nuovaSottocategoriaBtn')"/>
+			<toolbarbutton label="Elimina" image="images/navigation/toolbar/categorie-delete16.png" onClick="@command('eliminaCategoriaBtn')"/>
+			<textbox value="@bind(vm.update)" />
+			<toolbarbutton label="Aggiorna" image="images/navigation/toolbar/categorie-add16.png" onClick="@command('aggiornaBtn')"/>
+		</toolbar>
+	
+		<tree model="@bind(vm.treeModel)" onSelect="@command('keepSelectedNode')">
+			<treecols>
+				<treecol>
+					<label value="" />
+				</treecol>
+			</treecols>		
+			<template name="model" var="node"> 
+				<treeitem>
+					<treerow>
+						<treecell label="@bind(node.data.nome)" />
+					</treerow>
+				</treeitem>
+			</template>
+		</tree>
+			
+	</window>
+	
+	<window id="treeCategorie" apply="com.italigestionaleweb.tree.CategorieTreeComposer">
+		<tree id="tree">
+			<treecols>
+				<treecol label="Categorie"></treecol>
+			</treecols>
+		</tree>
+	</window>
+	
+	<div sclass="like-area touchable" >
+	</div>
+
+</vlayout>

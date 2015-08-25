@@ -1,0 +1,183 @@
+<window id="winDettaglioArticolo" mode="modal" border="normal" title="Dettaglio Articolo" width="80%" closable="true"
+ apply="org.zkoss.bind.BindComposer" viewModel="@id('vmda') @init('com.italigestionaleweb.controller.ArticoloController')"	>
+<caption image="images/navigation/toolbar/articolo-dettaglio16.png" label="@load(vmda.articolo.nome)"/> 
+<tabbox>
+	<tabs>
+		<tab label="Dati Articolo"/>
+		<tab label="Dettagli Articoli"/>
+		<tab label="Foto Descrizione"/>
+		<tab label="Storico prezzo acquisto"/>
+	</tabs>
+	<tabpanels>
+		<tabpanel>
+			<groupbox closable="false">
+				<caption label="Dati articolo" style="font-weight: bold;"  />
+				<grid>
+					<columns>
+						<column label="" width="11%" />
+						<column label="" />
+					</columns>
+					<rows>
+						<row>
+							<label value="Codice articolo"/>
+							<hlayout spacing="20px">
+								<textbox cols="20" value="@load(vmda.articolo.codice_articolo)" readonly="true"/>
+								<label value="Codice articolo fornitore" />
+								<textbox cols="20" value="@load(vmda.articolo.codice_fornitore)" readonly="true"/>
+								<label value="Codice EAN-UPC" />
+								<textbox cols="20" value="@load(vmda.articolo.codice_ean_upc)" readonly="true"/>
+							</hlayout>
+						</row>
+						<row>
+							<label value="Nome articolo"/>
+							<textbox cols="80" value="@load(vmda.articolo.nome)" readonly="true"/>
+						</row>
+						<row>
+							<label value="Fornitore"/>
+							<textbox value="@load(vmda.articolo.fornitore)" readonly="true"/>
+						</row>
+						<row>
+							<label value="Giacenza"/>
+							<hlayout spacing="20px">
+								<spinner cols="5" value="@load(vmda.articolo.giacenza)" readonly="true"/>
+								<label value="Prenotati" />
+								<spinner cols="5" value="@load(vmda.articolo.prenotati)" readonly="true"/>
+								<label value="In riordino" />
+								<spinner cols="5" value="@load(vmda.articolo.riordino)" readonly="true"/>
+								<label value="Scorta minima" />
+								<spinner cols="5" value="@load(vmda.articolo.scorta_minima)" readonly="true"/>
+								<label value="Unità di misura" />
+								<textbox cols="5" value="@load(vmda.articolo.unita_di_misura)" readonly="true"/>
+							</hlayout>
+						</row>
+						<row>
+							<label value="Categoria"/>
+							<hlayout spacing="20px">
+								<textbox value="@load(vmda.articolo.categoria)" readonly="true"/>
+								<label value="Sotto categoria"/>
+								<textbox value="@load(vmda.articolo.sotto_categoria)" readonly="true"/>
+							</hlayout>
+						</row>
+						<!-- <row>
+							<label value="Provincia"/>
+							<hlayout spacing="20px">
+								<textbox />
+								<label value="Città"/>
+								<textbox />
+								<label value="CAP"/>
+								<textbox maxlength="6" cols="8"/>
+							</hlayout>
+						</row> -->
+						<!-- <row>
+							<label value=""/>
+							<textbox />
+						</row> -->
+					</rows>
+				</grid>
+			</groupbox>
+			<groupbox closable="false">
+				<caption label="Prezzi e Ricarichi" style="font-weight: bold;" />
+					<grid>
+						<columns>
+							<column label="" width="20%" />
+							<column label="" />
+						</columns>
+						<rows>
+							<row>
+								<label value="Listino fornitore"/>
+								<hlayout spacing="20px">
+									<textbox cols="5" value="@load(vmda.articolo.listino_fornitore)" readonly="true"/>
+									<label value="Sconto fornitore"/>
+									<textbox cols="5" value="@load(vmda.articolo.sconto_fornitore)" readonly="true"/>
+									<label value="Prezzo d'acquisto"/> 
+									<textbox cols="5" value="@load(vmda.articolo.prezzo_acquisto)" readonly="true"/>
+									<label value="Sconto medio"/>
+									<textbox cols="5" value="@load(vmda.articolo.sconto_medio)" readonly="true"/>
+								</hlayout>
+							</row>
+						</rows>
+					</grid>
+				</groupbox>
+		</tabpanel>
+		<tabpanel>
+			<groupbox closable="false">
+				<caption label="Dettagli articolo" style="font-weight: bold;"  />
+				<grid>
+					<columns>
+						<column label="" width="11%" />
+						<column label="" />
+					</columns>
+					<rows>
+						<row>
+							<label value="Descrizione"/>
+							<textbox cols="80" rows="3" value="@load(vmda.articolo.descrizione)" readonly="true"/>
+						</row>
+						<row>
+							<label value="Produttore"/>
+							<textbox value="@load(vmda.articolo.produttore)" readonly="true"/>
+						</row>
+						<row>
+							<label value="Confezione"/>
+							<textbox value="@load(vmda.articolo.confezione)" readonly="true"/>
+						</row>
+						<row>
+							<label value="Peso netto"/>
+							<hlayout spacing="20px">
+									<textbox cols="5" value="@bind(vmda.articolo.peso)" readonly="true"/>
+									<textbox cols="3" value="@load(vmda.articolo.peso_unita)" readonly="true"/>
+								</hlayout>
+						</row>
+						<row>
+							<label value="Ingredienti"/>
+							<textbox value="@load(vmda.articolo.ingredienti)" cols="80" readonly="true"/>
+						</row>
+						<row>
+							<label value="Regione"/>
+							<textbox value="@load(vmda.articolo.regione)" readonly="true"/>
+						</row>
+						<row>
+							<label value="Fabbricazione"/>
+							<textbox value="@load(vmda.articolo.fabbricazione)" readonly="true"/>
+						</row>
+						<row>
+							<label value="Certificazioni"/>
+							<textbox value="@load(vmda.articolo.certificazioni)" cols="80" readonly="true"/>
+						</row>
+					</rows>
+				</grid>
+			</groupbox>
+		</tabpanel>
+		<tabpanel>
+			<groupbox closable="false">
+				<caption label="Foto articolo" style="font-weight: bold;"  />
+					<image content="@load(vmda.image)" />
+			</groupbox>	
+		</tabpanel>
+		<tabpanel>
+			<groupbox closable="false">
+				<caption label="Storico prezzo d'acquisto" style="font-weight: bold;"  />
+				<grid>
+					<columns>
+						<column label="Data"/>
+						<column label="Fattura"/>
+						<column label="Listino"/>
+						<column label="Sconto"/>
+						<column label="Prezzo"/>
+						<column label="Quantità"/>
+					</columns>
+					<rows>
+						<row>
+							<label value=""/>
+							<label value=""/>
+							<label value=""/>
+							<label value=""/>
+							<label value=""/>
+							<label value=""/>
+						</row>
+					</rows>
+				</grid>
+			</groupbox>
+		</tabpanel>
+	</tabpanels>
+</tabbox>	
+</window>

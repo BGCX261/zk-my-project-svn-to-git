@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?page id="amSoccer" title="AM Soccer"?>
+<?meta name="keywords" content="Soccer, Gestionale, Calcio, Scuola Calcio, Allenamento, Gratuito, Free" ?>
+
+<!-- Load Bootstrap  -->
+<?link href="bootstrap/css/bootstrap.css" rel="stylesheet" type="text/css"?>
+
+<!-- Google Open Sans font -->
+<!-- Load fonts from local -->
+<?link href="css/fonts.css" rel="stylesheet" type="text/css"?>
+
+<?link href="less/index.css.dsp" rel="stylesheet" type="text/css"?>
+
+<zk>
+<include src="navbar.zul" />
+<hlayout id="main" spacing="0">
+	<include src="sidebar.zul" />
+	<vlayout spacing="0" hflex="1">
+		<include src="breadcrumbs.zul"/>
+		<include src="allenatori/allenatori.zul" />
+	</vlayout>
+</hlayout>
+</zk>

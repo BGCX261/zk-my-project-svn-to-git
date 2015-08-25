@@ -1,0 +1,54 @@
+<?page id="userGuide" title="Itali Gestionale" contentType="text/html;charset=UTF-8"?>
+<?init class="com.italigestionaleweb.login.AuthenticationInit"?>
+
+<zk xmlns:ca="client/attribute">
+
+<window id="mainWindow" apply="org.zkoss.bind.BindComposer" height="100%" width="100%" closable="true" viewModel="@id('vm') @init('com.italigestionaleweb.MainWindowVM')"
+	onClientInfo='@command("updateDeviceStatus",orient=event.orientation)'
+>
+
+<style src="@load(vm.css)" />
+
+<div
+	sclass="modal"
+	visible="@load(vm.modalShow)"
+	onClick='@command("hideModal")'>
+</div>
+
+<borderlayout animationDisabled="false">
+
+	<west sclass="menuPanel" ca:data-swipeable="true" autoscroll="true" collapsible="true" open="@bind(vm.menuOpen)" visible="@bind(vm.menuOpen)">
+	
+		<caption>
+
+		</caption>
+		<include src="/WEB-INF/include/navigazionesx.zul" />
+	</west>
+	<center id="contentPanel" sclass="contentPanel" border="0" hflex="1">
+		
+		<!-- Title Bar -->
+		<caption>
+			<include src="/WEB-INF/include/titlebar.zul" />
+		</caption>
+		
+		<!-- Content Area -->
+		<borderlayout id="contentArea">
+			<center sclass="newsfeedPanel" autoscroll="true">
+			
+				<caption>
+					<include src="/WEB-INF/include/toolbar.zul" />
+				</caption>
+				
+				<div>
+					<include id="includeContentArea" src="/WEB-INF/content/news.zul" /> 
+				</div>
+			
+			</center>	
+		</borderlayout>
+	
+	</center>
+
+</borderlayout>
+</window>
+
+</zk>

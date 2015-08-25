@@ -1,0 +1,25 @@
+<?page title="" contentType="text/html;charset=UTF-8"?>
+<zk>
+<window id="winCercaArticoli" mode="modal" border="normal" width="80%" closable="true" title="Cerca Articoli" apply="org.zkoss.bind.BindComposer"
+	viewModel="@id('vm') @init('com.italigestionaleweb.viewmodel.RicercaArticoloViewModel')"
+>
+
+	<hbox align="center">
+		<label value="Nome Articolo" />
+		<textbox />
+		
+		<label value="Categoria" />
+		<textbox />
+		
+		<label value="Fornitore" />
+		<listbox mold="select" selectedItem="@bind(vm.articolo.fornitore)" model="@load(vm.listFornitori)">
+			<template name="model" var="fornit">
+				<listitem label="@load(fornit)" value="@load(fornit)" />
+			</template>
+		</listbox>
+		
+		<button label="Cerca" onClick="@command('cercaArticolo')" />
+	</hbox>
+
+</window>
+</zk>

@@ -1,0 +1,23 @@
+<!-- <hbox sclass="toolbar" children="@load(vm.toolbarModel)" width="100%">
+	<template name="children">
+		<cell align="center" width="33%">
+			<toolbarbutton
+				label="${each}"   
+				onClick='@command("showMessage", pos="after_center")' />
+		</cell>
+	</template>
+</hbox>
+ -->
+
+<hbox sclass="toolbar" width="100%">
+	<cell align="center" width="33%">
+		<!-- <toolbarbutton label="Nuovo" onClick='@command("showMessage", pos="after_center")' /> -->
+		<label value="@load(vm.user.username)" />
+	</cell>
+	<cell align="center" width="33%">
+		<toolbarbutton label="Dettaglio" onClick='@command("showMessage", pos="after_center")' />
+	</cell> 
+	<cell align="center" width="33%">
+		<toolbarbutton label="Logout" onClick='@command("doLogout")' />
+	</cell>
+</hbox>
